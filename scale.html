@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>SVG Example</title>
+	<script src="http://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+	<script>	
+
+        var dataArray = [10, 40, 30, 70];
+        var width = 500;
+        var height = 500;
+        
+        var widthScale = d3.scaleLinear()
+                            .domain([0, 70])
+                            .range([0, width]);
+        
+        var colorScale = d3.scaleLinear()
+                            .domain([0, 70])
+                            .range(["red", "blue"]);
+
+		var canvas = d3.select("body")
+                    .append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+
+        var bars = canvas.selectAll("rect")
+                    .data(dataArray)
+                    .enter()
+                        .append("rect")
+                        .attr("width", function(d) { return widthScale(d); })
+                        .attr("height", 50)
+                        .attr("fill", function(d) { return colorScale(d); })
+                        .attr("y", function(d, i) { return i * 75; });
+
+
+	</script>	
+</body>
+
+</html>
