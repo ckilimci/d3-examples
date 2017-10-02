@@ -13,3 +13,5 @@ D3 examples for training.
 | Enter - Update | enter-update.html | https://www.youtube.com/watch?v=OZXYk_bgQGQ |
 | Exit - Update  | exit-update.html  | https://www.youtube.com/watch?v=OZXYk_bgQGQ |
 | Transition     | transitions.html  | https://www.youtube.com/watch?v=EpeOzq8eDYk |
+
+Solar system planets placed in scable distance to sun and drew in scalable diameter to eachother but the distances (million km) and the diameter measurement (km) are in different scale.
