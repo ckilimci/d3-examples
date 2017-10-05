@@ -1,6 +1,6 @@
 # d3-examples
 
-D3 library examples for learning
+D3 library examples for learning.
 
 **Some of them are YouTube Tutorial:**
 
