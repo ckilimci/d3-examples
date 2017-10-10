@@ -14,13 +14,14 @@
         
             var width = 700;
             var height = 500;
+            var priceRange = [0, 13];
 
             var widthScale = d3.scaleLinear()
-                                .domain([0, 12])
+                                .domain(priceRange)
                                 .range([0, width]);
 
             var colorScale = d3.scaleLinear()
-                                .domain([0, 12])
+                                .domain(priceRange)
                                 .range(["blue", "red"]);
 
             var axis = d3.axisBottom(widthScale)
@@ -41,20 +42,18 @@
                     .attr("height", 25)
                     .attr("fill", function(d) { return colorScale(d.USD); })
                     .attr("y", function(d, i) { return i * 26; })
-                    .attr("transform", "translate(90, 30)");
-            
-            // TODO: Right align text
+                    .attr("transform", "translate(0, 30)");
+
             canvas.selectAll("text")
                 .data(data)
                 .enter()
                     .append("text")
-                    .attr("fill", "black")
-                    .attr("x", 0)
+                    .attr("fill", function(d) { return colorScale(d.USD); })
+                    .attr("x", function(d) { return widthScale(d.USD); })
                     .attr("y", function(d, i) { return (i * 26) + 47; })
                     .text(function(d) { return d.Country; });
 
             canvas.append("g")
-                    .attr("transform", "translate(90, 0)")
                     .call(axis);
             
         });
