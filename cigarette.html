@@ -15,6 +15,7 @@
             var width = 700;
             var height = 500;
             var priceRange = [0, 13];
+            var colorRange = ["green", "red"];
 
             var widthScale = d3.scaleLinear()
                                 .domain(priceRange)
@@ -22,7 +23,7 @@
 
             var colorScale = d3.scaleLinear()
                                 .domain(priceRange)
-                                .range(["blue", "red"]);
+                                .range(colorRange);
 
             var axis = d3.axisBottom(widthScale)
                             .ticks(15);
