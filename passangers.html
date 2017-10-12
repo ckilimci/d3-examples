@@ -14,6 +14,7 @@
         
             var width = 1350;
             var height = 600;
+            var colorRange = ["blue", "red"];
 
             var widthScale = d3.scaleLinear()
                                 .domain([0, 90000000])
@@ -21,7 +22,7 @@
 
             var colorScale = d3.scaleLinear()
                                 .domain([25000000, 100000000])
-                                .range(["blue", "red"]);
+                                .range(colorRange);
 
             var axis = d3.axisBottom(widthScale)
                             .ticks(10);
